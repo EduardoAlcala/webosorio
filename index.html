@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fábrica de Cocinas & Closets Osorio | Querétaro</title>
+<meta name="description" content="Cocinas integrales, closets, muebles de baño y puertas en melamina, a la medida. Showroom en Querétaro. Cotización sin costo.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#241b14;
+    --walnut:#7a4b2a;
+    --walnut-deep:#5c3820;
+    --walnut-light:#a9743f;
+    --brass:#b8923d;
+    --brass-light:#d4b46a;
+    --porcelain:#f2eee6;
+    --porcelain-2:#e9e1d1;
+    --ash:#55493c;
+    --white:#ffffff;
+    --radius:2px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--porcelain);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{list-style:none;}
+
+  a:focus-visible,button:focus-visible{
+    outline:3px solid var(--brass);
+    outline-offset:3px;
+  }
+
+  .eyebrow{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:0.72rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--walnut);
+    font-weight:600;
+  }
+
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    line-height:1.12;
+    color:var(--ink);
+  }
+
+  .container{
+    max-width:1160px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 26px;
+    border-radius:var(--radius);
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    font-size:0.92rem;
+    letter-spacing:0.02em;
+    border:1.5px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, background .2s ease, border-color .2s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--walnut);color:var(--white);}
+  .btn-primary:hover{background:var(--walnut-deep);}
+  .btn-outline{border-color:rgba(255,255,255,0.55);color:var(--white);}
+  .btn-outline:hover{border-color:var(--brass-light);background:rgba(255,255,255,0.06);}
+  .btn-dark{border-color:var(--ink);color:var(--ink);}
+  .btn-dark:hover{background:var(--ink);color:var(--white);}
+
+  /* ===== NAV ===== */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(242,238,230,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--porcelain-2);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;max-width:1160px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{width:38px;height:38px;flex-shrink:0;}
+  .brand-name{
+    font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;line-height:1.1;
+  }
+  .brand-name span{display:block;font-family:'Space Grotesk',sans-serif;font-size:0.62rem;letter-spacing:0.14em;color:var(--walnut);font-weight:600;margin-top:2px;}
+
+  nav.links{display:flex;gap:32px;font-size:0.92rem;font-weight:500;}
+  nav.links a:hover{color:var(--walnut);}
+
+  .nav-cta{display:flex;align-items:center;gap:16px;}
+  .nav-phone{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.92rem;white-space:nowrap;}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;}
+
+  @media (max-width:860px){
+    nav.links{display:none;}
+    .nav-phone{display:none;}
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    background:var(--ink);
+    color:var(--white);
+    overflow:hidden;
+  }
+  .hero-inner{
+    max-width:1160px;margin:0 auto;padding:88px 28px 0;
+    display:grid;grid-template-columns:1.05fr 0.95fr;gap:48px;align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem,4.4vw,3.4rem);
+    color:var(--white);
+    margin:18px 0 20px;
+  }
+  .hero-eyebrow{color:var(--brass-light);}
+  .hero p.lead{
+    font-size:1.08rem;color:#dcd2c2;max-width:46ch;margin-bottom:32px;
+  }
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
+
+  .hero-media{
+    position:relative;
+    border-radius:var(--radius);
+    overflow:hidden;
+    aspect-ratio:4/5;
+    align-self:end;
+  }
+  /* IMAGEN CONFIGURABLE: foto principal de cocina en el hero.
+     Reemplaza la URL dentro de background-image por tu propia foto. */
+  .hero-media .photo{
+    position:absolute;inset:0;
+    background-image:url("assets/1.jpg");
+    background-size:cover;background-position:center;
+    filter:saturate(1.02);
+  }
+  .hero-media::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(36,27,20,0) 55%, rgba(36,27,20,0.55) 100%);
+  }
+  .hero-media .tag{
+    position:absolute;left:16px;bottom:16px;z-index:2;
+    background:rgba(242,238,230,0.94);color:var(--ink);
+    font-family:'Space Grotesk',sans-serif;font-size:0.72rem;font-weight:600;
+    letter-spacing:0.06em;padding:8px 12px;border-radius:2px;
+  }
+
+  @media (max-width:860px){
+    .hero-inner{grid-template-columns:1fr;padding-top:56px;}
+    .hero-media{aspect-ratio:16/10;order:-1;}
+  }
+
+  /* ===== SWATCH DIVIDER (signature element) ===== */
+  .swatch-strip{
+    display:flex;
+    height:14px;
+    width:100%;
+  }
+  .swatch-strip span{flex:1;}
+
+  /* ===== SECTION SHELL ===== */
+  section{padding:88px 0;}
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);margin-top:10px;}
+  .section-head p{color:var(--ash);margin-top:14px;font-size:1.02rem;}
+
+  .alt-bg{background:var(--porcelain-2);}
+
+  /* ===== SERVICIOS ===== */
+  .services-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  }
+  .service-card{
+    background:var(--white);border:1px solid var(--porcelain-2);
+    padding:30px 24px;border-radius:var(--radius);
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .service-card:hover{border-color:var(--brass);transform:translateY(-4px);}
+  .service-icon{
+    width:44px;height:44px;margin-bottom:20px;color:var(--walnut);
+  }
+  .service-card h3{font-size:1.15rem;margin-bottom:10px;}
+  .service-card p{color:var(--ash);font-size:0.94rem;}
+
+  @media (max-width:960px){
+    .services-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:560px){
+    .services-grid{grid-template-columns:1fr;}
+  }
+
+  /* ===== ACABADOS (swatches) ===== */
+  .finishes{
+    display:grid;grid-template-columns:repeat(6,1fr);gap:16px;
+  }
+  .finish{
+    aspect-ratio:1;border-radius:var(--radius);
+    display:flex;align-items:flex-end;padding:12px;
+    position:relative;overflow:hidden;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);
+  }
+  .finish span{
+    font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:600;
+    background:rgba(255,255,255,0.85);padding:4px 8px;border-radius:2px;
+  }
+  .finish.dark span{background:rgba(36,27,20,0.75);color:#fff;}
+
+  @media (max-width:860px){.finishes{grid-template-columns:repeat(3,1fr);}}
+  @media (max-width:480px){.finishes{grid-template-columns:repeat(2,1fr);}}
+
+  /* ===== GALERÍA / PROYECTOS ===== */
+  .gallery{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+  }
+  .g-card{
+    aspect-ratio:3/4;border-radius:var(--radius);overflow:hidden;position:relative;
+    background:var(--porcelain-2);
+  }
+  /* IMAGEN CONFIGURABLE: esta es la única foto real de muestra.
+     Reemplázala por una foto de tus propios trabajos cuando la tengas. */
+  .g-card.real{
+    background-image:url("https://images.unsplash.com/photo-1764526624453-db32c24eca55?fm=jpg&q=80&w=900&auto=format&fit=crop");
+    background-size:cover;background-position:center;
+  }
+  .g-card.real .g-label{background:rgba(36,27,20,0.78);color:#fff;}
+  .g-card.placeholder{
+    border:1.5px dashed #b9ab94;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:10px;color:var(--ash);text-align:center;padding:16px;
+  }
+  .g-card.placeholder svg{width:30px;height:30px;color:var(--walnut-light);}
+  .g-card.placeholder small{font-size:0.78rem;line-height:1.4;}
+  .g-label{
+    position:absolute;left:12px;bottom:12px;
+    font-family:'Space Grotesk',sans-serif;font-size:0.72rem;font-weight:600;
+    padding:6px 10px;border-radius:2px;
+  }
+
+  @media (max-width:960px){.gallery{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.gallery{grid-template-columns:1fr;}}
+
+  /* ===== POR QUÉ ELEGIRNOS ===== */
+  .why-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:32px;
+  }
+  .why-item{border-top:2px solid var(--brass);padding-top:18px;}
+  .why-item h3{font-size:1.05rem;margin-bottom:8px;font-family:'Space Grotesk',sans-serif;font-weight:600;}
+  .why-item p{color:var(--ash);font-size:0.92rem;}
+
+  @media (max-width:860px){.why-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.why-grid{grid-template-columns:1fr;}}
+
+  /* ===== TESTIMONIOS ===== */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .testi-card{
+    background:var(--white);padding:28px 26px;border-radius:var(--radius);
+    border:1px solid var(--porcelain-2);
+  }
+  .testi-card p.quote{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:500;margin-bottom:18px;}
+  .testi-card .who{font-family:'Space Grotesk',sans-serif;font-size:0.8rem;color:var(--walnut);font-weight:600;}
+
+  @media (max-width:860px){.testi-grid{grid-template-columns:1fr;}}
+
+  /* ===== SHOWROOM ===== */
+  .showroom{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;
+    background:var(--ink);color:var(--white);border-radius:var(--radius);overflow:hidden;
+  }
+  .showroom-info{padding:56px 48px;}
+  .showroom-info h2{color:var(--white);font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:20px;}
+  .showroom-info p{color:#d9cfbf;margin-bottom:8px;}
+  .showroom-list{margin:26px 0 32px;}
+  .showroom-list li{
+    display:flex;gap:12px;margin-bottom:14px;font-size:0.95rem;color:#e7ddcd;
+  }
+  .showroom-list li strong{color:var(--brass-light);font-family:'Space Grotesk',sans-serif;font-weight:600;min-width:110px;}
+  .map-frame{width:100%;height:100%;min-height:380px;border:0;filter:grayscale(0.15) contrast(1.05);}
+
+  @media (max-width:860px){
+    .showroom{grid-template-columns:1fr;}
+    .map-frame{min-height:280px;}
+  }
+
+  /* ===== CTA FINAL ===== */
+  .final-cta{
+    text-align:center;padding:96px 0;
+  }
+  .final-cta h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:18px;}
+  .final-cta p{color:var(--ash);max-width:52ch;margin:0 auto 34px;}
+  .final-cta .btn-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--ink);color:#cfc3ae;padding:52px 0 28px;}
+  .footer-top{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:32px;padding-bottom:32px;
+    border-bottom:1px solid rgba(255,255,255,0.12);margin-bottom:24px;
+  }
+  .footer-brand{max-width:320px;}
+  .footer-brand .brand-name{color:var(--white);}
+  .footer-brand p{font-size:0.88rem;margin-top:14px;color:#a99c85;}
+  .footer-cols{display:flex;gap:64px;flex-wrap:wrap;}
+  .footer-col h4{
+    font-family:'Space Grotesk',sans-serif;font-size:0.78rem;letter-spacing:0.1em;
+    text-transform:uppercase;color:var(--brass-light);margin-bottom:16px;font-weight:600;
+  }
+  .footer-col li{margin-bottom:10px;font-size:0.9rem;}
+  .footer-col a:hover{color:var(--white);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-size:0.8rem;color:#8b7e69;
+  }
+
+  @media (max-width:640px){
+    .footer-top{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#" class="brand" aria-label="Inicio">
+    <img src="assets/logo1.png" alt="Logo" class="brand-mark">
+      <span class="brand-name">Osorio
+        <span>FABRICA DE COCINAS &amp; CLOSETS</span>
+      </span>
+    </a>
+    <nav class="links">
+      <a href="#servicios">Servicios</a>
+      <a href="#acabados">Acabados</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#showroom">Showroom</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:+524427123907">442 712 3907</a>
+      <a class="btn btn-dark" href="https://wa.me/524427123907?text=Hola%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" rel="noopener">Cotizar</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="eyebrow hero-eyebrow">FÁBRICA DE COCINAS &amp; CLOSETS · QUERÉTARO</p>
+      <h1>Muebles a la medida de cómo vives.</h1>
+      <p class="lead">Cocinas integrales, closets, muebles de baño y puertas en melamina. Diseñamos, fabricamos e instalamos en Querétaro, con medidas exactas y acabados que se ven bien por años.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://wa.me/524427123907?text=Hola%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+        <a class="btn btn-outline" href="tel:+524427123907">Llamar: 442 712 3907</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="photo"></div>
+      <span class="tag">Cocina integral en melamina y granito</span>
+    </div>
+  </div>
+
+  <div class="swatch-strip" aria-hidden="true">
+    <span style="background:#7a4b2a"></span>
+    <span style="background:#c9a35e"></span>
+    <span style="background:#3d2e22"></span>
+    <span style="background:#d8cdb8"></span>
+    <span style="background:#8a8074"></span>
+    <span style="background:#5c3820"></span>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Lo que fabricamos</p>
+      <h2>Cuatro especialidades, un mismo estándar de acabado.</h2>
+      <p>Todo se diseña sobre las medidas reales de tu espacio, en melamina de alta densidad y con herrajes de larga duración.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 12h18M3 12v7h18v-7M3 12V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5M7 19v-4M17 19v-4"/></svg>
+        <h3>Cocinas integrales</h3>
+        <p>Diseño de gabinetes altos y bajos, isla y encimera pensados para el flujo real de tu cocina.</p>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M12 3v18M8 11h.01M16 11h.01"/></svg>
+        <h3>Closets a medida</h3>
+        <p>Divisiones, cajones y puertas que aprovechan cada centímetro, para ropa, calzado y accesorios.</p>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="5" y="4" width="14" height="9" rx="1"/><path d="M3 17h18M7 21h10M9 8h6"/></svg>
+        <h3>Muebles de baño</h3>
+        <p>Muebles resistentes a la humedad diaria, con acabados que mantienen su color y forma con el tiempo.</p>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="6" y="2.5" width="12" height="19" rx="1"/><path d="M14.5 12h.01"/></svg>
+        <h3>Puertas</h3>
+        <p>Puertas de interior en melamina, hechas a la medida exacta de tu marco y del estilo de tu casa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="acabados" class="alt-bg">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Materiales</p>
+      <h2>Acabados disponibles</h2>
+      <p>Estos son ejemplos de tonos de melamina. Ven al showroom para ver y tocar la muestra física antes de decidir. (Cambia estos nombres y colores por tu catálogo real cuando quieras.)</p>
+    </div>
+    <div class="finishes">
+      <div class="finish" style="background:#c9b18b;"><span>Nogal claro</span></div>
+      <div class="finish dark" style="background:#5c3820;"><span>Nogal oscuro</span></div>
+      <div class="finish" style="background:#efe9dd;"><span>Blanco</span></div>
+      <div class="finish" style="background:#b7b2a8;"><span>Gris cemento</span></div>
+      <div class="finish" style="background:#8a5a34;"><span>Roble</span></div>
+      <div class="finish dark" style="background:#2e2620;"><span>Wengué</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="proyectos">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Nuestro trabajo</p>
+      <h2>Proyectos</h2>
+      <p>Esta sección está lista para tus fotos reales. Por ahora usa una imagen genérica de referencia y espacios marcados para las tuyas.</p>
+    </div>
+    <div class="gallery">
+      <div class="g-card real" style="background-image:url('assets/4.jpg'); background-size:cover; background-position:center;">
+        <span class="g-label">Cocina integral</span>
+      </div>
+      <div class="g-card real" style="background-image:url('assets/2.jpg'); background-size:cover; background-position:center;">
+        <span class="g-label">Cocina integral</span>
+      </div>
+      <div class="g-card real" style="background-image:url('assets/3.jpg'); background-size:cover; background-position:center;">
+        <span class="g-label">Cocina integral</span>
+      </div>
+      <div class="g-card real" style="background-image:url('assets/5.jpg'); background-size:cover; background-position:center;">
+        <span class="g-label">Cocina integral</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Por qué elegirnos</p>
+      <h2>Cuatro razones para decidirte con confianza.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <h3>Medida exacta</h3>
+        <p>Vamos a tu casa a medir antes de fabricar. Nada de ajustes improvisados el día de la instalación.</p>
+      </div>
+      <div class="why-item">
+        <h3>Garantía por escrito</h3>
+        <p>Respaldamos materiales y herrajes ante cualquier defecto de fabricación.</p>
+      </div>
+      <div class="why-item">
+        <h3>Instalación incluida</h3>
+        <p>Nuestro propio equipo instala y deja el espacio funcionando el mismo día.</p>
+      </div>
+      <div class="why-item">
+        <h3>Showroom físico</h3>
+        <p>Ven a Valle de San Pedro y toca los acabados antes de tomar una decisión.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Clientes</p>
+      <h2>Lo que dicen quienes ya remodelaron</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p class="quote">"Llegaron a medir, nos mostraron opciones de acabado y la cocina quedó exactamente como la planeamos."</p>
+        <p class="who">Familia Hernández · Cocina integral</p>
+      </div>
+      <div class="testi-card">
+        <p class="quote">"El clóset aprovechó un espacio que antes era un desperdicio. La instalación fue en un solo día."</p>
+        <p class="who">Cliente en Juriquilla · Closet a medida</p>
+      </div>
+      <div class="testi-card">
+        <p class="quote">"Cambiamos las puertas de toda la casa. El acabado combina perfecto con los pisos."</p>
+        <p class="who">Cliente en Centro Sur · Puertas interiores</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="showroom" class="alt-bg">
+  <div class="container">
+    <div class="showroom">
+      <div class="showroom-info">
+        <p class="eyebrow" style="color:var(--brass-light)">Visítanos</p>
+        <h2>Showroom en Querétaro</h2>
+        <p>Ven a ver y tocar los acabados antes de decidir. La cotización no tiene costo.</p>
+        <ul class="showroom-list">
+          <li><strong>Dirección</strong> Jazmín 34, Valle de San Pedro, Querétaro, México</li>
+          <li><strong>Teléfono</strong> 442 712 3907</li>
+          <li><strong>Horario</strong> Lunes a viernes, 9:00 a 18:00 · Sábado, 10:00 a 13:00</li>
+        </ul>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="https://wa.me/524427123907?text=Hola%2C%20quiero%20visitar%20el%20showroom" target="_blank" rel="noopener">Agendar visita</a>
+          <a class="btn btn-outline" href="tel:+524427123907">Llamar ahora</a>
+        </div>
+      </div>
+      <!-- El mapa carga la dirección directamente, sin necesidad de API key -->
+      <iframe class="map-frame" loading="lazy"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d933.5626839109179!2d-100.45724413051794!3d20.618634254008978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d35068c8bad7b5%3A0x9520fda7f683139d!2sC.%20Jazm%C3%ADn%2034%2C%2076113%20Santiago%20de%20Quer%C3%A9taro%2C%20Qro.!5e0!3m2!1ses!2smx!4v1783372998941!5m2!1ses!2smx"
+        title="Ubicación del showroom Osorio"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <p class="eyebrow" style="justify-content:center;display:flex;">Siguiente paso</p>
+    <h2>Hecho a tu medida, hecho para durar.</h2>
+    <p>Cuéntanos qué espacio quieres transformar y te damos una cotización sin costo.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://wa.me/524427123907?text=Hola%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+      <a class="btn btn-dark" href="tel:+524427123907">442 712 3907</a>
+    </div>
+  </div>
+</section>
+
+<div class="swatch-strip" aria-hidden="true">
+  <span style="background:#5c3820"></span>
+  <span style="background:#8a8074"></span>
+  <span style="background:#d8cdb8"></span>
+  <span style="background:#3d2e22"></span>
+  <span style="background:#c9a35e"></span>
+  <span style="background:#7a4b2a"></span>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-name">Osorio<span>COCINAS &amp; CLOSETS</span></span>
+        <p>Fábrica de cocinas, closets, muebles de baño y puertas en melamina. Diseño, fabricación e instalación en Querétaro.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#acabados">Acabados</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#showroom">Showroom</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="tel:+524427123907">442 712 3907</a></li>
+            <li><a href="https://wa.me/524427123907" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li>Jazmín 34, Valle de San Pedro</li>
+            <li>Querétaro, México</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fábrica de Cocinas &amp; Closets Osorio.</span>
+      <span>Cotización sin costo</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
